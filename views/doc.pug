@@ -1,0 +1,27 @@
+html
+    head
+        title Ассистент
+    body
+        form(action='/'+docID+'/'+id, method='POST')
+            h1 #{title}
+            a(href='/addDocColumn'+'/'+docID )
+                button(type='button') Добавить
+            a(href='/deleteDocColumn'+'/'+docID)
+                button(type='button') Удалить
+            input(type='submit', value='Сохранить') 
+            p
+            ul
+                each value, index in rows
+                    li
+                        |#{index}
+                        |
+                        input(name=index value=value) 
+                    
+            p
+            //Невидмиое поле для понимания с какой таблицей docID работаем 
+            input(name='docID' value=docID style={visibility: 'hidden'})
+            p
+            //Невидмиое поле для понимания с какой id работаем 
+            input(name='id' value=id style={visibility: 'hidden'})
+            p
+            h2= response

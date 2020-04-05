@@ -1,0 +1,10 @@
+html
+    head
+        title Проверить подключение к Базе данных 
+    body
+        h2 Проверить подключение к Базе данных 
+        form(action='/'+docID, method='post')
+            p
+            input(type='submit', value='Проверить')
+        p
+        h2= response 

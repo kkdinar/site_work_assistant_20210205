@@ -1,0 +1,23 @@
+html
+    head
+        title Ассистент
+    body
+        h1 #{title}
+        form(action='/delete', method='POST')
+            p
+            input(type='submit', value='Удалить')
+            p
+            ul
+                each value, index in rows
+                    li 
+                        input(type='radio' name='radio' value=index)
+                        |#{value}
+                        //input(type='checkbox', name=index)
+                        //|#{value}      
+                              
+            p
+            //Невидмиое поле для понимания с какой таблицей type работаем 
+            input(name='docID' value=docID style={visibility: 'hidden'})                   
+            p
+            h2= response
+

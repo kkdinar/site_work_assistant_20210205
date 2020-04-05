@@ -1,0 +1,28 @@
+html
+    head
+        title Ассистент
+    body
+        form(action='/addDocColumn', method='POST')
+            p
+            h2 Добавление нового поля в документ   
+            p
+            | Наименование:
+            input(name = "name")
+            p 
+            input(type='radio' name='radio' value='TEXT' checked) 
+            | Текстовое поле                       
+            p
+            input(type='radio' name='radio' value='FLOAT')
+            | Числовое поле                     
+            p
+            input(type='radio' name='radio' value='DATE')
+            | Дата                    
+
+            p
+            input(type='submit', value='Добавить')
+            p
+            //Невидмиое поле для понимания с какой таблицей type работаем 
+            input(name='docID' value=docID style={visibility: 'hidden'})
+            p
+            h2= response
+            

@@ -1,0 +1,16 @@
+html
+    head
+        title Создать Базу данных
+    body
+        form(action='/'+docID, method='POST')
+            p
+            | Удалить ВСЕ старые данные
+            input(type="checkbox" name="force", value='1') 
+            p
+            | Добавить новые таблицы и столбцы
+            input(type="checkbox" name="alter", value='1') 
+            p
+            input(type='submit', value='Создать Базу данных')
+            p
+            h2= response 
+            

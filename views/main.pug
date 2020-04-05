@@ -1,0 +1,18 @@
+html
+    head
+        title Ассистент
+    body
+        h1 #{title}
+        a(href='add/main')
+            button(type='button') Добавить
+        a(href='delete/main')
+            button(type='button') Удалить
+        p
+        ul
+            each value, index in rows
+                li
+                    a(href=index)
+                        button(type="button") #{value}
+        p
+        //Невидмиое поле для понимания с какой таблицей type работаем 
+        input(name='docID' value=docID style={visibility: 'hidden'})

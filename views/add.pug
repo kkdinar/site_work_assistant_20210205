@@ -1,0 +1,35 @@
+html
+    head
+        title Добавление данных
+    body
+        form(action='/add', method='POST')
+            p
+            case docID
+                when 'main'
+                    p Добавление документа
+                    p
+                    | Наименование:
+                    input(name = "name")
+
+                when '3'
+                    p Добавление пользователя
+                    p
+                    | Логин:
+                    input(name = "Login")
+                    p
+                    | Пароль:
+                    input(name = "Password", type="password")
+                    p
+                    | Повторите пароль:
+                    input(name = "Password2", type="password")                  
+
+                default
+                    p Вы действительно хотите добавить новый документ?
+            p
+            input(type='submit', value='Добавить')
+            p
+            //Невидмиое поле для понимания с какой таблицей type работаем 
+            input(name='docID' value=docID style={visibility: 'hidden'})
+            p
+            h2= response
+            
